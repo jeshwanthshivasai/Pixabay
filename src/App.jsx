@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NavBar from "./components/Navbar";
+import './styles/App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<App/>} />
+        <Route exact path="./components/Navbar.jsx" element={<Navbar/>} />
+        <Route exact path="./components/Hero.jsx" element={<Hero/>} />
+        <Route exact path="./components/Footer.jsx" element={<Footer/>} />
+        <Route exact path="./components/Cards.jsx" element={<Cards/>} />
+        <Route exact path="bng" element={<Bangalore/>} />
+        <Route exact path="goa" element={<Goa/>} />
+        <Route exact path="kol" element={<Kolkata/>} />
+      </Routes>
+    </BrowserRouter>
+    )
+  }
 }
-
-export default App
