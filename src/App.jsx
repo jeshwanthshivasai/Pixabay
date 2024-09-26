@@ -1,23 +1,103 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NavBar from "./components/Navbar";
-import './styles/App.css';
+// import React, { useState, useEffect } from 'react';
+// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+// import Login from './Login';
+// import Footer from './components/Footer';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<App/>} />
-        <Route exact path="./components/Navbar.jsx" element={<Navbar/>} />
-        <Route exact path="./components/Hero.jsx" element={<Hero/>} />
-        <Route exact path="./components/Footer.jsx" element={<Footer/>} />
-        <Route exact path="./components/Cards.jsx" element={<Cards/>} />
-        <Route exact path="bng" element={<Bangalore/>} />
-        <Route exact path="goa" element={<Goa/>} />
-        <Route exact path="kol" element={<Kolkata/>} />
-      </Routes>
-    </BrowserRouter>
-    )
-  }
+// function App() {
+//   const [images,setImages] = useState([]);
+//   const [searchTerm, setSearchTerm] = useState('');
+
+//   const fetchImages = async () => {
+//       const response = await fetch(`https://pixabay.com/api/?key=${'46193678-548a763bb419072e45a9aa1b3'}&q=${searchTerm}&image_type=photo&pretty=true`);
+//       const data = await response.json();
+//       setImages(data.hits);
+//   };
+
+//   useEffect(() => {
+//     fetchImages();
+//   }, [searchTerm]);
+
+//   const handleSearchChange = (e) => {
+//     setSearchTerm(e.target.value);
+//   };
+
+//   return (
+//     <Router>
+//       <div className="App">
+//         <nav className="navbar">
+//           <div className="navbar-container">
+            
+//             <Link to="/" className="navbar-logo">
+//               Pixabay Search
+//             </Link>
+//             <ul className="navbar-menu">
+//               <li className="navbar-item">
+//                 <Link to="/" className="navbar-link">Home</Link>
+//               </li>
+//               <li className="navbar-item">
+//                 <Link to="/login" className="navbar-link">Login</Link>
+//               </li>
+//             </ul>
+//           </div>
+//         </nav>
+//         <Routes>
+          
+//           <Route path="/" element={
+//             <div id="bac">
+//               <h1>Pixabay Image Search</h1>
+//               <input
+//                 type="text"
+//                 placeholder="Search for images..."
+//                 value={searchTerm}
+//                 onChange={handleSearchChange}
+//               />
+
+//               <div className="grid-container">
+//                 {images.length > 0 ? (
+//                   images.map((image) => (
+//                     <div key={image.id} className="grid-item">
+//                       <img src={image.webformatURL} alt={image.tags} />
+//                       <p>{image.tags}</p>
+//                     </div>
+//                   ))
+//                 ) : (
+//                   <p>No images found</p>
+//                 )}
+//               </div>
+//             </div>
+//           }/>
+
+//           <Route path="/login" element={<Login />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+
+import React from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import PhotoDisplay from './components/PhotoDisplay';
+import LoginForm from './RoutedPages/LoginForm';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div className="App">
+      <Navbar />
+      <Hero />
+      <div id="bac">
+        <PhotoDisplay />
+        <LoginForm />
+      </div>
+      <Footer />
+    </div>
+  );
 }
+
+export default App;
