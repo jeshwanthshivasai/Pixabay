@@ -103,13 +103,14 @@
 
 
 import React from "react";
-import Pixabay from "./components/Pixabay";
-import './App.css';
+import ImageWebsite from "./components/ImageWebsite";
+import './App.css'
 
- export default function App() {
+function App() {
     return (
         <div>
-            <Pixabay/>
+          <ImageWebsite/>
         </div>
     );
 }
+export default App;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Pixabay() {
+export default function ImageWebsite() {
     let[api, setApi] = useState([]);
     let[search, setSearch] = useState("");
     let change = (e) => {
@@ -14,8 +14,8 @@ export default function Pixabay() {
 
     return (
         <>
-        <nav>
-                <h1>pixabay</h1>
+            <nav>
+                <h1>Pixabay</h1>
                 <ul>
                     <div id="nav-p">
                         <li id="nav-items"><button>Explore</button></li>
@@ -28,7 +28,6 @@ export default function Pixabay() {
             <div className="header-image"></div>
             <div className="main-container">
                 <h1 id="main-head-t">Stunning royalty-free images & royalty-free stock</h1>
-
 
                 <h3>Over 5 million+ high-quality stock images, videos, and music shared by our talented community.</h3>
 
@@ -46,8 +45,11 @@ export default function Pixabay() {
                 <button className="styled-button">Photos</button>
                 <button className="styled-button">Gifs</button>
                 <button className="styled-button">Illustrations</button>
-            </div> <br />   <br />
+            </div> 
 
+            <br /> 
+            <br />
+            
             <div>
                 <div id="last-container">
                     {api.filter(x => {
@@ -62,6 +64,10 @@ export default function Pixabay() {
                         })}
 
                 </div>
+            </div>
+
+            <div className="footer">
+                <p className="footer-text">&copy; Alamy 2022</p>
             </div>
         </>
     )
