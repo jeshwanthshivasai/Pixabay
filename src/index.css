@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* border: solid 1px; */
 }
 
 /* Background image styling */
@@ -40,8 +41,8 @@ nav h1 {
   gap: 25px;
 }
 #main-head-t{
-color: rgb(255, 255, 255);
-font-family: sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
 }
 
 #nav-items {
@@ -91,14 +92,15 @@ font-family: sans-serif;
 }
 
 .main-container input:focus {
-  border-color: #4a90e2;
+  border-color: rgb(72, 114, 161);
+  outline-offset: 2px;
   outline: none;
 }
 
 /* Styling buttons */
 #nav-items button {
-  background-color: #19d197; /* Button background color */
-  color: white; /* Text color */
+  background-color: #ffffff; /* Button background color */
+  color: #999999; /* Text color */
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -109,7 +111,9 @@ font-family: sans-serif;
 }
 
 #nav-items button:hover {
-  background-color: #bee317; /* Darker shade on hover */
+  background-color: #999999; /* Darker shade on hover */
+  color: #ffffff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
   transform: translateY(-2px); /* Slight lift effect */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
@@ -141,7 +145,7 @@ margin-top: 230px;
 }
 
 .styled-button:hover {
-  background-color: #16d8c1; /* Darker blue on hover */
+  background-color: #414141; /* Darker blue on hover */
   transform: translateY(-3px); /* Slight lift effect */
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
@@ -167,7 +171,7 @@ margin-top: 230px;
   gap: 40px;
   transition: 0.5s;
   border-radius: 10px;
-  box-shadow: 2px 2px 2px 2px rgb(177, 171, 171);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
 }
@@ -181,4 +185,17 @@ transform: scale(1.1);
   padding: 5px;
   border: none;
 
+}
+
+.footer p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 100px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #777;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -3,9 +3,19 @@ import React, { useState } from 'react';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Simple email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    setError('');
     console.log('Logging in with:', { email, password });
   };
 
@@ -33,6 +43,7 @@ const LoginForm = () => {
             required
           />
         </div>
+        {error && <p className="error">{error}</p>}
         <button type="submit" className="login-btn">Login</button>
       </form>
     </div>

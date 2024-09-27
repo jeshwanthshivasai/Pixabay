@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ImageWebsite() {
     let[api, setApi] = useState([]);
@@ -7,10 +8,11 @@ export default function ImageWebsite() {
         setSearch(e.target.value);
     }
     useEffect(() => {
-        let api = fetch(`https://pixabay.com/api/?key=46193687-1ee9f7465fd5eeca96a352d5f&q=${search}&image_type=photo`);
-        api.then(res.json())
+        fetch(`https://pixabay.com/api/?key=46193687-1ee9f7465fd5eeca96a352d5f&q=${search}&image_type=photo`)
+        .then(res => res.json())
         .then(val  => setApi(val.hits))
-    })
+        .catch(err => console.error("Error Fetching Data", err));
+    }, [search])
 
     return (
         <>
@@ -19,8 +21,8 @@ export default function ImageWebsite() {
                 <ul>
                     <div id="nav-p">
                         <li id="nav-items"><button>Explore</button></li>
-                        <li id="nav-items"><button>Login</button></li>
-                        <li id="nav-items"><button>Join</button></li>
+                        <Link to="/login" > <li id="nav-items"><button>Login</button></li> </Link>
+                        <Link to="/regex" > <li id="nav-items"><button>Sign Up!</button></li> </Link>
                         <li id="nav-items"><button>Upload</button></li>
                     </div>
                 </ul>
@@ -41,10 +43,7 @@ export default function ImageWebsite() {
             </div>
 
             <div className="button-container">
-                <button className="styled-button">Home</button>
-                <button className="styled-button">Photos</button>
-                <button className="styled-button">Gifs</button>
-                <button className="styled-button">Illustrations</button>
+
             </div> 
 
             <br /> 
