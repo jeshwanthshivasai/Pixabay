@@ -1,228 +1,240 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Container styling */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #e8f5e9;
+  padding: 20px;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Helvetica', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-  }
-  
-  .App {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Navbar Styling */
-  .navbar {
-    background-color: #343a40;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    color: #ffffff;
-    font-size: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-logo:hover {
-    color: #00aaff;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar-item {
-    margin-left: 20px;
-  }
-  
-  .navbar-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-link:hover {
-    color: #00aaff;
-  }
-  
-  /* Hero Section */
-  .hero {
-    padding: 60px;
-    background-color: #4A90E2;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 48px;
-    margin: 0 0 10px 0;
-  }
-  
-  .hero p {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  /* Pixabay Search Page */
-  #bac {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    color: #343a40;
-    margin-bottom: 20px;
-  }
-  
-  input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    transition: border 0.3s ease;
-  }
-  
-  input[type="text"]:focus {
-    border-color: #00aaff;
-    outline: none;
-  }
-  
-  p {
-    color: #6c757d;
-    font-size: 18px;
-  }
-  
-  /* Image Grid */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-  }
-  
-  .grid-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .grid-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .grid-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-  }
-  
-  .grid-item:hover img {
-    opacity: 0.9;
-  }
-  
-  .grid-item p {
-    padding: 10px;
-    margin: 0;
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  /* Login Form Styling */
-  .login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    color: #4A90E2;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="email"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  input[type="email"]:focus, input[type="password"]:focus {
-    outline: none;
-    border-color: #4A90E2;
-    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
-  }
-  
-  .login-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #4A90E2;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-btn:hover {
-    background-color: #357ABD;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #343a40;
-    padding: 20px 0;
-    text-align: center;
-    color: white;
-  }
-  
-  .footer-text {
-    margin: 0;
-    font-size: 16px;
-    color: #bbb;
-  }
-  
+.signup-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.signup-box h1 {
+  margin-bottom: 20px;
+  color: #2e7d32; /* Dark green */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-container label {
+  margin-bottom: 5px;
+  color: #388e3c; /* Medium green */
+  font-size: 14px;
+}
+
+.input-container input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #a5d6a7; /* Light green border */
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.input-container input:focus {
+  border-color: #2e7d32; /* Dark green on focus */
+  outline: none;
+}
+
+/* Styling the 'Forgot your Password?' text */
+.signup-box span {
+  color: #1e88e5; /* Blue */
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.signup-box span:hover {
+  color: #1565c0; /* Darker blue */
+}
+
+/* Button styling */
+.signup-box button {
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: #66bb6a; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%; /* Button takes the full width */
+}
+
+.signup-box button:hover {
+  background-color: #43a047; /* Darker green */
+}
+
+.signup-box button:active {
+  transform: translateY(1px);
+}
+
+/* Styling for 'Or, Login with' section */
+.divider {
+  display: block;
+  margin: 10px 0;
+  color: #757575; /* Grey */
+  font-size: 14px;
+}
+
+/* Styling for the 'Sign up with Google' button */
+.google-button {
+  background-color: #f4511e; 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.google-button:hover {
+  background-color: #e64a19; 
+}
+
+.google-button:active {
+  transform: translateY(1px);
+}
+
+
+/* Login Css */
+
+/* Container styling */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f9fc; /* Light background */
+  padding: 20px;
+}
+
+.login-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.field-container label {
+  margin-bottom: 6px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.field-container input {
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #cdd2d6;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 8px;
+}
+
+.field-container input:focus {
+  border-color: #3a8dff;
+  box-shadow: 0 0 5px rgba(58, 141, 255, 0.2);
+  outline: none;
+}
+
+/* Styling the 'Forgot your Password?' text */
+.login-box .forgot-password {
+  color: #3a8dff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.login-box .forgot-password:hover {
+  color: #0066cc;
+}
+
+/* Button styling */
+.login-button {
+  padding: 12px;
+  background-color: #3a8dff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%; 
+  margin-bottom: 15px;
+}
+
+.login-button:hover {
+  background-color: #0066cc;
+}
+
+.login-button:active {
+  transform: translateY(1px);
+}
+
+/* Styling for 'Or, Login with' section */
+.login-divider {
+  display: block;
+  margin: 15px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Styling for the 'Login with Google' button */
+.google-auth-button {
+  background-color: #ea4335; 
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.google-auth-button:hover {
+  background-color: #d8362a;
+}
+
+.google-auth-button:active {
+  transform: translateY(1px);
+}
